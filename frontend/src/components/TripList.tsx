@@ -1,5 +1,8 @@
 "use client";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL;
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ItineraryCard from "./ItineraryCard";
@@ -19,7 +22,7 @@ export default function TripList() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/trips",
+        `${API_URL}/api/trips`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +41,7 @@ export default function TripList() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:5000/api/trips/${id}`,
+        `${API_URL}/api/trips/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -62,7 +65,7 @@ export default function TripList() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/trips/${id}`,
+        `${API_URL}/api/trips/${id}`,
         {
           itinerary: editedItinerary,
         },
@@ -87,7 +90,7 @@ export default function TripList() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/ai/regenerate-day",
+        `${API_URL}/api/ai/regenerate-day`,
         {
           destination: trip.destination,
           day: 1,
