@@ -1,3 +1,4 @@
+import CreateTripForm from "../components/CreateTripForm";
 import TripList from "../components/TripList";
 
 export default function Home() {
@@ -6,6 +7,8 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-6">
         AI Travel Planner
       </h1>
+
+      <CreateTripForm />
 
       <TripList />
     </div>

@@ -1,5 +1,7 @@
 "use client";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -15,7 +17,7 @@ export default function CreateTripForm() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "http://localhost:5000/api/ai/generate-itinerary",
+        `${API_URL}/api/ai/generate-itinerary`,
         {
           destination,
           days: Number(days),
@@ -31,7 +33,7 @@ export default function CreateTripForm() {
 
       setItinerary(response.data.itinerary);
       await axios.post(
-  "http://localhost:5000/api/trips",
+  `${API_URL}/api/trips`,
   {
     destination,
     days: Number(days),
