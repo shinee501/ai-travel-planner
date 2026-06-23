@@ -1,6 +1,6 @@
 import CreateTripForm from "../components/CreateTripForm";
-import PackingList from "../components/PackingList";
 import TripList from "../components/TripList";
+import PackingList from "../components/PackingList";
 
 export default function Home() {
   return (
@@ -10,10 +10,8 @@ export default function Home() {
       </h1>
 
       <CreateTripForm />
-
-      <PackingList />
-
       <TripList />
+      <PackingList destination="Goa" />
     </div>
   );
 }
