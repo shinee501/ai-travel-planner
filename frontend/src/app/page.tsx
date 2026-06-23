@@ -1,4 +1,5 @@
 import CreateTripForm from "../components/CreateTripForm";
+import PackingList from "../components/PackingList";
 import TripList from "../components/TripList";
 
 export default function Home() {
@@ -9,6 +10,8 @@ export default function Home() {
       </h1>
 
       <CreateTripForm />
+
+      <PackingList />
 
       <TripList />
     </div>
